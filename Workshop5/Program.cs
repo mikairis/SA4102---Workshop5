@@ -22,18 +22,16 @@ namespace Workshop5
             {
                 string str1 = s1[i];
                 string str2 = s2[i];
-
-                string lowStr1 = str1.ToLower();
-                string lowStr2 = str2.ToLower();
-
-                bool boolCheck = InString(lowStr1, lowStr2);
+                bool boolCheck = InString(str1, str2);
                 Console.WriteLine(str1 + "\t\t\t" + str2 + "\t\t\t" + boolCheck);
             }
             Console.ReadKey();
         }
         static Boolean InString(string s1, string s2)
         {
-            bool boolChecker = s1.Contains(s2);
+            string str1 = s1.ToLower();
+            string str2 = s2.ToLower();
+            bool boolChecker = str1.Contains(str2);
             return boolChecker;
         }
     }

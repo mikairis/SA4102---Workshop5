@@ -1,11 +1,9 @@
-﻿using System;
+using System;
 
 namespace Workshop5
 {
     class Program
     {
-
-
         static void Main(string[] args)
         {
             /*Console.WriteLine("*****************************Workshop 5 Task 3********************************");
@@ -19,7 +17,7 @@ namespace Workshop5
                 bool boolCheck = InString(str1, str2);
                 Console.WriteLine(str1 + "\t\t\t" + str2 + "\t\t\t" + boolCheck);
             }
-            Console.ReadKey();*/
+            Console.ReadKey();
 
             Console.WriteLine("****************************************Workshop 5 Task 4***************************************");
             Console.WriteLine("**This programme matches 2 sets of data from 2 strings and returns an integer for the position**");
@@ -53,7 +51,6 @@ namespace Workshop5
         }
         static int FindWord(string str1, string str2)
         {
-            int count = 0;
             int index = 0;
             int j = 0;
             string s1 = str1.ToLower();
@@ -65,11 +62,44 @@ namespace Workshop5
             {
                 if (c[i] == ch[0])
                 {
-                     index = i;
-                     break;
+                    index = i;
+                    break;
                 }
             }
-            return index;
+            return index;*/
+
+            Console.WriteLine("******************************Workshop 5 Task 6******************************");
+            Console.WriteLine("**This programme will find specific occurance in string and substitute them**");
+            Console.WriteLine("*****************************************************************************");
+            Start:
+            Console.Write("Enter a word or phrase: ");
+            string s = Console.ReadLine();
+            Console.WriteLine();
+            Console.Write("Enter a character that you would like to search from string: ");
+            char c1 = Convert.ToChar(Console.ReadLine());
+            Console.WriteLine();
+            Console.Write("Enter another character that you would like use to substitute into the previous character from string: ");
+            char c2 = Convert.ToChar(Console.ReadLine());
+            Console.WriteLine();
+            string newS = Substitute(s, c1, c2);
+            Console.WriteLine("The substituted version is " + newS);
+            Console.ReadKey();
+            goto Start;
+
+        }
+        static string Substitute(string s, char c1, char c2)
+        {
+            char[] charS = s.ToCharArray();
+
+            for (int i = 0; i < s.Length; i++)
+            {
+                if (charS[i] == c1)
+                {
+                    charS[i] = c2;
+                }
+            }
+            string newS = new string(charS);
+            return newS;
         }
     }
 }

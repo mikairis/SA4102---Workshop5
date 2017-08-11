@@ -82,8 +82,9 @@ namespace Workshop5
             char c2 = Convert.ToChar(Console.ReadLine());
             Console.WriteLine();
             string newS = Substitute(s, c1, c2);
-            Console.WriteLine("The substituted version is " + newS);
+            Console.WriteLine("The substituted version is " + "\"" + newS + "\"");
             Console.ReadKey();
+            Console.WriteLine();
             goto Start;
 
         }
